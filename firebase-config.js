@@ -15,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-export const HOTEL_NAME = "Janta Hotel";
-export const HOTEL_GSTIN = "08XXXXX1234X1Z5";
-export const HOTEL_PHONE = "+91 98765 43210";
-export const HOTEL_ADDRESS = "Main Road, Your City, Rajasthan";
+export const HOTEL_NAME = "JANTA Sweats Restaurant & Hotel";
+export const HOTEL_GSTIN = "08AFFPR7471G2Z1";
+export const HOTEL_PHONE = "+91 94148 63285";
+export const HOTEL_ADDRESS = "Tehsil Choraya, Jayal, Rajasthan";
