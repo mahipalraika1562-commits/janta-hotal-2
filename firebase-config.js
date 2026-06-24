@@ -15,12 +15,12 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebas
 
 // 🔴 APNA CONFIG YAHAN REPLACE KARO:
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCnAlG-Y5LjJYdUDk57IQ9KeT1IYQw9OJQ",
+  authDomain: "janta-hotal.firebaseapp.com",
+  projectId: "janta-hotal",
+  storageBucket: "janta-hotal.firebasestorage.app",
+  messagingSenderId: "977412816277",
+  appId: "1:977412816277:web:90f27c00d80c7d94e34a9c"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -28,7 +28,7 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 // Hotel ka naam (settings mein change kar sakte ho)
-export const HOTEL_NAME = "Janta Hotel";
-export const HOTEL_GSTIN = "08XXXXX1234X1Z5";
-export const HOTEL_PHONE = "+91 98765 43210";
-export const HOTEL_ADDRESS = "Main Road, Your City, Rajasthan";
+export const HOTEL_NAME = "Janta Sweets Restaurant & Hotal";
+export const HOTEL_GSTIN = "08AFFPR7471G2Z1";
+export const HOTEL_PHONE = "+91 9414863285";
+export const HOTEL_ADDRESS = "Jayal, Nagour, Rajasthan";
