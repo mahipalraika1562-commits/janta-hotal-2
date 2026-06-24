@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janta Hotel - Accounting System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="logo-icon-big"><i class="ti ti-building"></i></div>
+      <h1>Janta Hotel</h1>
+      <p>Accounting System</p>
+    </div>
+    <div id="loginError" class="alert alert-danger" style="display:none"></div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="aapka@email.com">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Password">
+    </div>
+    <button class="btn btn-primary btn-full" onclick="loginUser()">
+      <i class="ti ti-login"></i> Login
+    </button>
+    <p class="login-note">Janta Hotel Accounting System v1.0</p>
+  </div>
+</div>
+
+<!-- Main App -->
+<div id="appScreen" class="app" style="display:none">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon"><i class="ti ti-building"></i></div>
+      <div class="logo-text">
+        <div>Janta Hotel</div>
+        <div class="logo-sub">Accounting System</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-section">Dashboard</div>
+      <div class="nav-item active" onclick="showPage('dashboard',this)"><i class="ti ti-home"></i> Dashboard</div>
+      <div class="nav-section">Vouchers</div>
+      <div class="nav-item" onclick="showPage('receipt',this)"><i class="ti ti-receipt"></i> Receipt Voucher</div>
+      <div class="nav-item" onclick="showPage('payment',this)"><i class="ti ti-cash"></i> Payment Voucher</div>
+      <div class="nav-item" onclick="showPage('journal',this)"><i class="ti ti-notebook"></i> Journal Entry</div>
+      <div class="nav-item" onclick="showPage('sales',this)"><i class="ti ti-file-invoice"></i> Sales Invoice</div>
+      <div class="nav-item" onclick="showPage('purchase',this)"><i class="ti ti-package"></i> Purchase Entry</div>
+      <div class="nav-section">Books</div>
+      <div class="nav-item" onclick="showPage('ledger',this)"><i class="ti ti-book"></i> Ledger</div>
+      <div class="nav-item" onclick="showPage('daybook',this)"><i class="ti ti-calendar"></i> Day Book</div>
+      <div class="nav-item" onclick="showPage('cashbook',this)"><i class="ti ti-wallet"></i> Cash Book</div>
+      <div class="nav-section">Reports</div>
+      <div class="nav-item" onclick="showPage('trialbalance',this)"><i class="ti ti-scale"></i> Trial Balance</div>
+      <div class="nav-item" onclick="showPage('pandl',this)"><i class="ti ti-chart-line"></i> P&amp;L Statement</div>
+      <div class="nav-item" onclick="showPage('balancesheet',this)"><i class="ti ti-report"></i> Balance Sheet</div>
+      <div class="nav-item" onclick="showPage('gst',this)"><i class="ti ti-percentage"></i> GST Report</div>
+      <div class="nav-section">Masters</div>
+      <div class="nav-item" onclick="showPage('accounts',this)"><i class="ti ti-users"></i> Accounts Master</div>
+      <div class="nav-item" onclick="showPage('rooms',this)"><i class="ti ti-door"></i> Rooms</div>
+      <div class="nav-item" onclick="showPage('inventory',this)"><i class="ti ti-box"></i> Inventory</div>
+      <div class="nav-section">Account</div>
+      <div class="nav-item" onclick="showPage('settings',this)"><i class="ti ti-settings"></i> Settings</div>
+      <div class="nav-item" onclick="logoutUser()"><i class="ti ti-logout"></i> Logout</div>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+  <div class="main">
+    <div class="topbar">
+      <button class="btn btn-outline btn-icon menu-toggle" onclick="toggleSidebar()"><i class="ti ti-menu-2" style="font-size:20px"></i></button>
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="topbar-date" id="topbarDate"></div>
+      <div class="topbar-actions">
+        <button class="btn btn-outline btn-sm" onclick="window.print()"><i class="ti ti-printer"></i> Print</button>
+        <button class="btn btn-primary btn-sm" onclick="showPage('receipt',null)"><i class="ti ti-plus"></i> New</button>
+      </div>
+    </div>
+    <div class="content" id="mainContent"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script type="module" src="js/firebase-config.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
